@@ -1,5 +1,5 @@
 
-from thefuzz import fuzz
+from rapidfuzz import fuzz
 
 
 def institution_check(institution: str,
