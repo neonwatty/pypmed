@@ -10,7 +10,7 @@ pypmed is a Python library that provides easy access to the [PubMed's APIs](http
 
 ## Example usage
 
-This example can be executed in [this example notebook](https://colab.research.google.com/github/jermwatt/pynih/blob/main/pynih_example_usage.ipynb#scrollTo=mTC2IDzs7_l1).
+This example can be executed in [this example notebook](https://colab.research.google.com/github/jermwatt/pypmed/blob/main/pypmed_example_usage.ipynb#scrollTo=8TBhToBJo8ZY).
 
 ```python
 from pypmed import apis 
