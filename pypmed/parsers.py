@@ -13,7 +13,8 @@ def elem_to_dict(elem):
         else:
             d[child.tag] = child_dict
     return d
-        
+
+
 def build_query_string(search_criteria: dict) -> str:
     # build query string
     search_string = ""
@@ -23,12 +24,9 @@ def build_query_string(search_criteria: dict) -> str:
         if "author_last_name" in search_criteria.keys():
             search_string += f'{search_criteria["author_last_name"]} '
         search_string = search_string[:-1] + '[Author] '
-            
     if "publication_year" in search_criteria.keys():
         search_string += f'{search_criteria["publication_year"]}[PDAT] '
-    
     if "journal" in search_criteria.keys():
         search_string += f'{search_criteria["journal"]}[Journal]'
-        
     search_string = search_string.strip()
     return search_string
