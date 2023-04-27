@@ -30,7 +30,7 @@ def author_metadata_filter(author_metadata: dict,
         article_dict['author_first_name'] = author_metadata['author_first_name']
         article_dict['author_last_name'] = author_metadata['author_last_name']
         # check affiliation if provided
-        if institution is not None:
+        if institution is not None and 'AffiliationInfo' in list(best_match.keys()):
             affiliation_info = best_match['AffiliationInfo']['Affiliation']
             score = institution_check(institution, affiliation_info)
             if score > 80:
