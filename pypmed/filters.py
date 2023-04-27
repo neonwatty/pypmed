@@ -30,14 +30,15 @@ def author_metadata_filter(author_metadata: dict,
         article_dict['author_first_name'] = author_metadata['author_first_name']
         article_dict['author_last_name'] = author_metadata['author_last_name']
         # check affiliation if provided
-        if institution is not None and 'AffiliationInfo' in list(best_match.keys()):
-            try:
-              affiliation_info = best_match['AffiliationInfo']['Affiliation']
-              score = institution_check(institution, affiliation_info)
-              if score > 80:
-                  # author and institution confirmed - add to return list
-                  article_dict['institution'] = institution
-            except Exception as e:
-                  article_dict['institution'] = ''
+        try:
+            if institution is not None and 'AffiliationInfo' in list(best_match.keys()):
+                affiliation_info = best_match['AffiliationInfo']['Affiliation']
+                score = institution_check(institution, affiliation_info)
+                if score > 80:
+                    # author and institution confirmed - add to return list
+                    article_dict['institution'] = institution
+        except Exception as e:
+            print(e)
+            article_dict['institution'] = ''
         return article_dict
     return None

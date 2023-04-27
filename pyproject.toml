@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pypmed"
-version = "0.1.6"
+version = "0.1.7"
 description = "python wrapper for pubmed apis --> https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi/"
 authors = ["Jeremy Watt <jermwatt@gmail.com>"]
 readme = "README.md"
