@@ -25,13 +25,13 @@ def author_metadata_filter(author_metadata: dict,
             best_match = item
 
     # check if best match for name is not None - if so article is confirmed for author
-    if best_match is not None:
+    if best_match is not None and isinstance(best_match, dict):
         # add author info to article package
         article_dict['author_first_name'] = author_metadata['author_first_name']
         article_dict['author_last_name'] = author_metadata['author_last_name']
         # check affiliation if provided
         try:
-            if institution is not None and 'AffiliationInfo' in list(best_match.keys()):
+            if institution is not None and 'AffiliationInfo' in best_match.keys():
                 affiliation_info = best_match['AffiliationInfo']['Affiliation']
                 score = institution_check(institution, affiliation_info)
                 if score > 80:
