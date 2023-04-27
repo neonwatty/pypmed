@@ -25,7 +25,7 @@ def author_metadata_filter(author_metadata: dict,
             best_match = item
 
     # check if best match for name is not None - if so article is confirmed for author
-    if best_match is not None and isinstance(best_match, dict):
+    if isinstance(best_match, dict):
         # add author info to article package
         article_dict['author_first_name'] = author_metadata['author_first_name']
         article_dict['author_last_name'] = author_metadata['author_last_name']
